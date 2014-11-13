@@ -49,8 +49,7 @@ BOOL SVGCurveEqualToCurve(SVGCurve curve1, SVGCurve curve2);
 
 @interface SVGKPointsAndPathsParser : NSObject
 
-+ (void) readWhitespace:(NSScanner*)scanner;
-+ (void) readCommaAndWhitespace:(NSScanner*)scanner;
++ (void) readComma:(NSScanner*)scanner;
 
 + (void) readCoordinate:(NSScanner*)scanner intoFloat:(CGFloat*) floatPointer;
 + (CGPoint) readCoordinatePair:(NSScanner*)scanner;
