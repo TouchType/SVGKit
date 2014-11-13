@@ -329,7 +329,9 @@ static NSMutableDictionary* globalSVGKImageCache;
     }
 #endif
 	
-//SOMETIMES CRASHES IN APPLE CODE, CAN'T WORK OUT WHY:	[self removeObserver:self forKeyPath:@"DOMTree.viewport"];
+    // SOMETIMES CRASHES IN APPLE CODE, CAN'T WORK OUT WHY
+    // (but is necessary otherwise SVGKImage always crashes when deallocated)
+    [self removeObserver:self forKeyPath:@"DOMTree.viewport"];
 	
     self.source = nil;
     self.parseErrorsAndWarnings = nil;
