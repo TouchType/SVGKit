@@ -11,6 +11,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.baseVal = nil;
+    [super dealloc];
+}
+
 /** TODO: Current implementation (animation not supported anywhere in SVGKit yet) simply returns
  a copy of self.baseVal --- NOTE: spec REQUIRES you return a copy! It is explicit on this!
  */
